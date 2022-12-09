@@ -18,11 +18,14 @@ jobs:
       run: |
         # $CONDA is an environment variable pointing to the root of the miniconda directory
         echo $CONDA/bin >> $GITHUB_PATH
-    - name: Install dependencies
+    - name: Create conda environment
       run: |
         conda create --name titanic python=3.9
-        conda init bash
+    - name: Activate conda environment
+      run: |
         conda activate titanic
+    - name: Install dependencies
+      run: |
         pip install -r requirements.txt
 #     - name: Lint with flake8
 #       run: |
