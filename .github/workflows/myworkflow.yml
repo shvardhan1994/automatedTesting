@@ -23,6 +23,7 @@ jobs:
         conda create --name titanic python=3.9
     - name: Activate conda environment
       run: |
+        conda deactivate
         conda activate titanic
     - name: Install dependencies
       run: |
